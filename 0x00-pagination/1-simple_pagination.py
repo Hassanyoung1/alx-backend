@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 
 """
-a function named index_range that takes two integer
-arguments page and page_size and returns a tuple containing
+This module contains a single function index_range that takes two integers
 """
-from typing import Tuple
+
+from typing import List
 import csv
 import math
-from typing import List
+from typing import Tuple
 
 
-def index_range(page: int, page_size: int) -> tuple:
+def index_range(page: int, page_size: int) -> Tuple[int, int]:
     """
     a function named index_range that takes two integer
     """
@@ -38,12 +38,11 @@ class Server:
 
         return self.__dataset
 
-    def get_page(self, page: int = 1, page_size: int = 10) -> List:
-        assert type(page) is int and type(page_size) is int
-        assert page > 0 and page_size > 0
+    def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+        assert isinstance(page, int) and isinstance(page_size, int), "page and page_size must be integers"
+        assert page > 0 and page_size > 0, "page and page_size must be greater than 0"
         start, end = index_range(page, page_size)
         data = self.dataset()
         if start > len(data):
             return []
         return data[start:end]
-    pass
