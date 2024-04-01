@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
 """
-This module contains a single function index_range that takes two integers
+This module contains a single function index_range thati
+takes two integers
 """
 
 from typing import List
