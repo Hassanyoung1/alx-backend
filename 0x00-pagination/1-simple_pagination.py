@@ -5,10 +5,9 @@ This module contains a single function index_range thati
 takes two integers
 """
 
-from typing import List
+from typing import List, Tuple
 import csv
 import math
-from typing import Tuple
 
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
