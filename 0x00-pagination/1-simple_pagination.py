@@ -38,20 +38,20 @@ class Server:
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """
-        Takes 2 integer arguments and returns requested page from the dataset
-        Args:
-            page (int): required page number. must be a positive integer
-            page_size (int): number of records per page. must be a +ve integer
-        Return:
-            list of lists containing required data from the dataset
-        """
-        assert type(page) is int and page > 0
-        assert type(page_size) is int and page_size > 0
+        Retrieve the requested page from the dataset.
 
-        dataset = self.dataset()
-        data_length = len(dataset)
-        try:
-            index = index_range(page, page_size)
-            return dataset[index[0]:index[1]]
-        except IndexError:
+        Args:
+            page (int): The page number to retrieve (default is 1).
+            page_size (int): The number of records per page (default is 10).
+
+        Returns:
+             List[List]: The dataset page corresponding to the requested page.
+        """
+
+        assert isinstance(page, int) and isinstance(page_size, int)
+        assert page > 0 and page_size > 0
+        index = index_range(page, page_size)
+        data = self.dataset()
+        if index[0] > len(data):
             return []
+        return data[index[0]:index[1]]
