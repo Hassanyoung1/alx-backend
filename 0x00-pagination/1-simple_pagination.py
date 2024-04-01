@@ -46,3 +46,4 @@ class Server:
         if start_index > len(data):
             return []
         return data[start_index:end_index]
+    pass
