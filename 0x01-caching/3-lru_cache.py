@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
 """
-
+LRU Caching implementation
 """
 
 BaseCaching = __import__('base_caching').BaseCaching
 
 
 class LRUCache(BaseCaching):
+    """
+    lru cache class
+    """
     def put(self, key, item):
         """
         Adds an item to the cache.
