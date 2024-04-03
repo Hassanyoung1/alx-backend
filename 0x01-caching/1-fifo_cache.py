@@ -8,6 +8,9 @@ BaseCaching = __import__('base_caching').BaseCaching
 
 
 class FIFOCache(BaseCaching):
+    """
+    FIFO cache eviction system
+    """
     def __init__(self):
         """
         Initialize
