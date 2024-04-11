@@ -1,0 +1,5 @@
+Flask==1.1.4
+Flask-Babel==2.0.0
+
+Flask==1.1.4 Jinja2==2.11.3
+Werkzeug
