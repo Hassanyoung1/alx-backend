@@ -8,7 +8,7 @@ from flask_babel import Babel
 
 app = Flask(__name__)
 babel = Babel(app)
-
+app.config.from_object(Config)
 
 class Config(object):
     """
