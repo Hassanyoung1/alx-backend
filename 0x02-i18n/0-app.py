@@ -9,7 +9,7 @@ import flask_babel import Babel
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/', strict_slashes=False)
 def index():
     """ Returns the index.html """
     return render_template('/0-index.html')
